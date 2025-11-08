@@ -1,20 +1,74 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vega-Lite Exercícios - Portfólio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercícios com Vega-Lite API — Fernanda Nascimento</title>
+  <link rel="preconnect" href="https://observablehq.com">
   <style>
-    body { font-family: system-ui, sans-serif; margin: 40px; background: #fafafa; }
-    h1 { color: #4C78A8; font-size: 1.6rem; }
-    iframe { width: 100%; height: 850px; border: none; }
+    :root{
+      --accent:#8A63D2;
+      --text:#1f2937; --muted:#6b7280; --bg:#f7f7fb; --card:#ffffff; --ring:rgba(0,0,0,.06);
+      --maxw:1060px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text);}
+    .container{max-width:var(--maxw); margin:0 auto; padding:28px 20px;}
+    header{display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom:18px}
+    h1{margin:0; font-size:clamp(22px,3vw,30px); color:var(--accent)}
+    .lead{color:var(--muted); margin:.25rem 0 0}
+    .card{background:var(--card); border:1px solid var(--ring); border-radius:16px; padding:18px; box-shadow:0 1px 3px rgba(0,0,0,.04); margin-top:14px}
+    .fig{display:flex; justify-content:center; align-items:center}
+    .embed{width:100%; aspect-ratio: 16/11; border:0; border-radius:12px}
+    .caption{color:var(--muted); font-size:.92rem; margin:.6rem 0 0; text-align:center}
+    details{margin-top:10px}
+    summary{cursor:pointer; color:var(--accent); font-weight:600}
+    footer{margin-top:26px; color:var(--muted); font-size:.92rem; text-align:center}
+    /* responsivo: aumente a altura do iframe em telas grandes */
+    @media (min-width:1100px){ .embed{aspect-ratio: 16/9;} }
   </style>
 </head>
 <body>
-  <h1>Exercícios com Vega-Lite API</h1>
-  <p>Exercício 1 e 2 integrados via Observable.</p>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Exercícios com Vega-Lite API</h1>
+        <p class="lead">Exercício 1 (barras agregadas) e Exercício 2 (dois scatterplots lado a lado) integrados via Observable.</p>
+      </div>
+    </header>
 
-  <iframe width="100%" height="854" frameborder="0"
+    <section class="card">
+      <div class="fig">
+        <iframe width="100%" height="854" frameborder="0"
   src="https://observablehq.com/embed/13a0f7d285f3f5c4@197?cells=bar%2Cscatters"></iframe>
+      </div>
+      <p class="caption">Gráficos gerados no Observable e embutidos via iframe (células <code>bar</code> e <code>scatters</code>).</p>
+
+      <!-- Explicações dobráveis para o portfólio -->
+      <details open>
+        <summary>O que o Exercício 1 mostra?</summary>
+        <p>
+          Barra agregada: média de <strong>Avg_BPM</strong> por <strong>Workout_Type</strong>, ordenada
+          em ordem decrescente. O objetivo é comparar a intensidade cardiovascular média entre
+          modalidades. <em>HIIT</em> tende a apresentar os maiores valores médios.
+        </p>
+      </details>
+
+      <details>
+        <summary>O que o Exercício 2 mostra?</summary>
+        <p>
+          Dois scatterplots, um para <strong>Homens</strong> e outro para <strong>Mulheres</strong>,
+          relacionando <strong>Peso (kg)</strong> (X) e <strong>Altura (m)</strong> (Y). Cada ponto é um indivíduo.
+          As escalas X e Y são compartilhadas para comparação justa.
+          Observa-se a tendência positiva esperada: pessoas mais altas tendem a pesar mais.
+        </p>
+      </details>
+    </section>
+
+    <footer>
+      Créditos do notebook: <a href="https://observablehq.com/d/13a0f7d285f3f5c4@197" target="_blank" rel="noopener">Observable</a>.
+      • Página do portfólio de <strong>Fernanda Nascimento</strong>.
+    </footer>
+  </div>
 </body>
 </html>
